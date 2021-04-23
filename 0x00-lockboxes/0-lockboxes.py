@@ -11,12 +11,10 @@ def canUnlockAll(boxes):
                     open_boxes.append(key)
         else:
             break
-    
     if 0 not in open_boxes:
         open_boxes.append(0)
-    
     unique_keys = list(set(open_boxes))
     if len(boxes) == len(unique_keys):
         return True
     else:
-        return False 
+        return False

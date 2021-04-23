@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-'''
-    return key pf boxes
-'''
 
 
 def canUnlockAll(boxes):
-    ''' num_boxes = len(boxes)'''
     open_boxes = []
 
     for box in boxes:

@@ -10,7 +10,6 @@ def canUnlockAll(boxes):
         otherwise returns false
     """
     open_boxes = []
-
     for box in boxes:
         if len(box) > 0:
             for key in box:

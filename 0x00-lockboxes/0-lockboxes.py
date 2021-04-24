@@ -14,7 +14,7 @@ def canUnlockAll(boxes):
     for box in boxes:
         if len(box) > 0:
             for key in box:
-                if key >= 0:
+                if key and key >= 0:
                     open_boxes.append(key)
         else:
             break

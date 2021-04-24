@@ -10,17 +10,14 @@ def canUnlockAll(boxes):
         otherwise returns false
     """
     open_boxes = []
-    if (type(boxes) is not list):
-        return False
-
-    if (len(boxes) == 0):
-        return False
-
+   
     for box in boxes:
         if len(box) > 0:
             for key in box:
-                if key and key >= 0:
+                if key >= 0:
                     open_boxes.append(key)
+                else:
+                    continue
         else:
             break
     if 0 not in open_boxes:

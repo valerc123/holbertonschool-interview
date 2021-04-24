@@ -10,6 +10,11 @@ def canUnlockAll(boxes):
         otherwise returns false
     """
     open_boxes = []
+    if (type(boxes) is not list):
+        return False
+
+    if (len(boxes) == 0):
+        return False
 
     for box in boxes:
         if len(box) > 0:

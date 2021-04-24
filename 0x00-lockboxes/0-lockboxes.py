@@ -1,7 +1,14 @@
 #!/usr/bin/python3
+"""
+    Check if all the boxes can be opened.
+"""
 
 
 def canUnlockAll(boxes):
+    """
+        Returns true if all boxes can be opened
+        otherwise returns false
+    """
     open_boxes = []
 
     for box in boxes:

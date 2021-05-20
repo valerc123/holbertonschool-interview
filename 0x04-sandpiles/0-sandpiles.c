@@ -81,6 +81,9 @@ void topple(int grid1[3][3]) {
         printf("=\n");
         myprint_grid(grid1);
         topple(grid1);
+    }else{
+        printf("=\n");
+        myprint_grid(grid1);
     }
 }
 void sandpiles_sum(int grid1[3][3], int grid2[3][3]){

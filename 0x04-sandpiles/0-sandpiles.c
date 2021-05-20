@@ -7,6 +7,7 @@
 void myprint_grid(int grid1[3][3])
 {
 	int i, j;
+
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
@@ -29,6 +30,7 @@ void myprint_grid(int grid1[3][3])
 int isStable(int grid1[3][3])
 {
 	int i, j;
+
 	for (i = 0; i < 3; i++)
 		for (j = 0; j < 3; j++)
 			if (grid1[i][j] > 3)
@@ -45,6 +47,7 @@ int isStable(int grid1[3][3])
 void add_sandpiles(int grid1[3][3], int grid2[3][3])
 {
 	int i, j;
+
 	for (i = 0; i < 3; i++)
 		for (j = 0; j < 3; j++)
 			grid1[i][j] = grid1[i][j] + grid2[i][j];
@@ -64,12 +67,10 @@ void topple(int grid1[3][3])
 		for (col = 0; col < 3; col++)
 		{
 			num = grid1[row][col];
-
 			if (num < 4)
 				nextpiles[row][col] = grid1[row][col];
 		}
 	}
-
 	for (x = 0; x < 3; x++)
 	{
 		for (y = 0; y < 3; y++)

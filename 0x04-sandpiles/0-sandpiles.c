@@ -6,9 +6,10 @@
  */
 void myprint_grid(int grid1[3][3])
 {
-	for (int i = 0; i < 3; i++)
+	int i, j;
+	for (i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (j = 0; j < 3; j++)
 		{
 			if (j)
 				printf(" ");
@@ -27,8 +28,9 @@ void myprint_grid(int grid1[3][3])
  */
 int isStable(int grid1[3][3])
 {
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < 3; j++)
+	int i, j;
+	for (i = 0; i < 3; i++)
+		for (j = 0; j < 3; j++)
 			if (grid1[i][j] > 3)
 				return (0);
 	return (1);
@@ -42,8 +44,9 @@ int isStable(int grid1[3][3])
  */
 void add_sandpiles(int grid1[3][3], int grid2[3][3])
 {
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < 3; j++)
+	int i, j;
+	for (i = 0; i < 3; i++)
+		for (j = 0; j < 3; j++)
 			grid1[i][j] = grid1[i][j] + grid2[i][j];
 }
 
@@ -53,28 +56,29 @@ void add_sandpiles(int grid1[3][3], int grid2[3][3])
  */
 void topple(int grid1[3][3])
 {
+	int x, y, row, col, i, j, num = 0, n = 0;
 	int nextpiles[3][3] = { {0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
 
-	for (int x = 0; x < 3; x++)
+	for (row = 0; row < 3; row++)
 	{
-		for (int y = 0; y < 3; y++)
+		for (col = 0; col < 3; col++)
 		{
-			int num = grid1[x][y];
+			num = grid1[row][col];
 
 			if (num < 4)
-				nextpiles[x][y] = grid1[x][y];
+				nextpiles[row][col] = grid1[row][col];
 		}
 	}
 
-	for (int x = 0; x < 3; x++)
+	for (x = 0; x < 3; x++)
 	{
-		for (int y = 0; y < 3; y++)
+		for (y = 0; y < 3; y++)
 		{
-			int num = grid1[x][y];
+			n = grid1[x][y];
 
-			if (num >= 4)
+			if (n >= 4)
 			{
-				nextpiles[x][y] += (num - 4);
+				nextpiles[x][y] += (n - 4);
 				/* down */
 				if ((x + 1) < 3)
 					nextpiles[x + 1][y]++;
@@ -90,8 +94,8 @@ void topple(int grid1[3][3])
 			}
 		}
 	}
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < 3; j++)
+	for (i = 0; i < 3; i++)
+		for (j = 0; j < 3; j++)
 			grid1[i][j] = nextpiles[i][j];
 }
 

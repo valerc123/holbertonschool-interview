@@ -7,18 +7,18 @@
  */
 int is_palindrome(listint_t **head)
 {
-    return checkPalindrome(head, *head);
+	return (checkPalindrome(head, *head));
 }
 int checkPalindrome(listint_t **left, listint_t *right)
 {
-    // base case
-    if (right == NULL) {
-        return 1;
-    }
- 
-    int result = checkPalindrome(left, right->next) &&
-            ((*left)->n == right->n);
-    (*left) = (*left)->next;
- 
-    return result;
+	int result;
+
+	if (right == NULL)
+		return (1);
+
+	result = checkPalindrome(left, right->next) &&
+			((*left)->n == right->n);
+	(*left) = (*left)->next;
+
+	return (result);
 }

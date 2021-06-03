@@ -20,15 +20,22 @@ if __name__ == "__main__":
     for line in sys.stdin:
         arr = line.split(" ")
         lines += 1
-        fileSize += int(arr[8])
+        fileSize += int(arr[-1])
         code = arr[-2]
         if(code in line):
             status[code] += 1
 
         if (lines == 10):
             lines = 0
-            print("File size: {0}".format(fileSize))
-            for key, value in status.items():
-                if value != 0:
-                    print(f"{key}: {value}")
-            fileSize = 0
+            try:
+                print("File size: {0}".format(fileSize))
+                for key, value in status.items():
+                    if value != 0:
+                        print(f"{key}: {value}")
+                fileSize = 0
+            except KeyboardInterrupt:
+                lines = 0
+                print("File size: {0}".format(fileSize))
+                for key, value in status.items():
+                    if value != 0:
+                        print(f"{key}: {value}")

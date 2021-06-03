@@ -9,6 +9,7 @@ if __name__ == "__main__":
     fileSize = 0
     status = {
         "200": 0,
+        "301": 0,
         "401": 0,
         "403": 0,
         "404": 0,
@@ -22,7 +23,9 @@ if __name__ == "__main__":
         if(arr[7] == '200'):
             status["200"] += 1
         elif (arr[7] == '401'):
-            status["401"] += 1
+            status["401"] += 1 
+        elif (arr[7] == '301'):
+            status["301"] += 1
         elif (arr[7] == '403'):
             status["403"] += 1
         elif (arr[7] == '404'):
@@ -36,6 +39,7 @@ if __name__ == "__main__":
             lines = 0
             print("File size: {0}".format(fileSize))
             print("200: {0}".format(status["200"]))
+            print("401: {0}".format(status["301"]))
             print("401: {0}".format(status["401"]))
             print("403: {0}".format(status["403"]))
             print("404: {0}".format(status["404"]))

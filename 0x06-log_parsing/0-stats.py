@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """Reads stdin line by line & computes metrics."""
-
+from time import sleep
+import random
 import sys
 
 if __name__ == "__main__":
@@ -39,3 +40,5 @@ if __name__ == "__main__":
         for key, value in status.items():
             if value != 0:
                 print(f"{key}: {value}")
+    finally:
+        sleep(random.random())

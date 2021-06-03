@@ -17,28 +17,25 @@ if __name__ == "__main__":
         "405": 0,
         "500": 0
     }
-    
 
-    for line in sys.stdin:
-        arr = line.split(" ")
-        lines += 1
-        fileSize += int(arr[-1])
-        code = arr[-2]
-        if(code in line):
-            status[code] += 1
-
-        if lines == 10:
-            try:
+    try:
+        for line in sys.stdin:
+            arr = line.split(" ")
+            lines += 1
+            fileSize += int(arr[-1])
+            code = arr[-2]
+            if(code in line):
+                status[code] += 1
+            if lines == 10:
                 lines = 0
-                print("File size: {0}".format(fileSize))
+                print(f"File size: {fileSize}")
                 for key, value in status.items():
                     if value != 0:
                         print(f"{key}: {value}")
-                fileSize = 0
-            except KeyboardInterrupt:
-                lines = 0
-                print("File size: {0}".format(fileSize))
-                for key, value in status.items():
-                    if value != 0:
-                        print(f"{key}: {value}")
-            status = dict.fromkeys(status, 0)
+                    fileSize = 0
+                status = dict.fromkeys(status, 0)
+    except KeyboardInterrupt as err:
+        print(f"File size: {fileSize}")
+        for key, value in status.items():
+            if value != 0:
+                print(f"{key}: {value}")

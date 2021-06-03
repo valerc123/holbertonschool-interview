@@ -17,6 +17,8 @@ if __name__ == "__main__":
         "405": 0,
         "500": 0
     }
+    
+
     for line in sys.stdin:
         arr = line.split(" ")
         lines += 1
@@ -25,9 +27,9 @@ if __name__ == "__main__":
         if(code in line):
             status[code] += 1
 
-        if (lines == 10):
-            lines = 0
+        if lines == 10:
             try:
+                lines = 0
                 print("File size: {0}".format(fileSize))
                 for key, value in status.items():
                     if value != 0:
@@ -39,3 +41,4 @@ if __name__ == "__main__":
                 for key, value in status.items():
                     if value != 0:
                         print(f"{key}: {value}")
+            status = dict.fromkeys(status, 0)

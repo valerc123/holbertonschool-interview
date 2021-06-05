@@ -4,7 +4,6 @@
 import sys
 
 lines = 0
-fileSize = 0
 total_size = 0
 status = {
     "200": 0,

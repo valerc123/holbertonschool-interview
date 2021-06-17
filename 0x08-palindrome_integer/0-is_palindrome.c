@@ -1,5 +1,4 @@
 #include "palindrome.h"
-#define MAX 100
 
 /**
  * num_digit - function returns number of digits of a number
@@ -30,7 +29,7 @@ unsigned long num_digit(unsigned long num)
 char *reverse(char *str)
 {
 	static int i;
-	static char revstr[MAX];
+	static char revstr[100];
 
 	if (*str)
 	{

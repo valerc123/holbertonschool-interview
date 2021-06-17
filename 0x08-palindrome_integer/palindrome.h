@@ -7,6 +7,6 @@
 
 int is_palindrome(unsigned long n);
 unsigned long num_digit(unsigned long num);
-char *reverse(char *str1);
+char *reverse(char *str);
 
 #endif

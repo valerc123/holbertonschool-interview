@@ -1,15 +1,15 @@
 #include "binary_trees.h"
 
+
 /**
 * sorted_array_to_avl - create the tree
 * @array: to be converted
 * @size: of array
 * Return: sorted array
 */
-
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-    avl_t *h = NULL;
+	avl_t *h = NULL;
 
 	if (array == NULL)
 		return (NULL);
@@ -26,7 +26,6 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
  * @h: header of node
  * Return: h
 */
-
 avl_t *is_tree_valid_avl(int *array, int p_start, int p_end, avl_t **h)
 {
 	int index = 0;

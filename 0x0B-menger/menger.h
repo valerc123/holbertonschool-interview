@@ -6,5 +6,6 @@
 #include <math.h>
 
 void menger(int level);
+int addSpace(int i, int j);
 
 #endif

@@ -13,3 +13,4 @@ def validUTF8(data):
         return True
     except Exception:
         return False
+    

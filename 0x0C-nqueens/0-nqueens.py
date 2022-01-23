@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-
 '''
 Module that solves the N Queens
 puzzle on an N×N chessboard
 '''
-
-
 from sys import argv, exit
 
 if __name__ == "__main__":

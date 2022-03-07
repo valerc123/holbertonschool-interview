@@ -13,7 +13,7 @@ Properties of an AVL Tree:
 * The left and right subtree each must also be a binary search tree
 Note: In order for the main file to compile, you are provided with this static library. This library won’t be used during correction, its only purpose is for testing.
 
-´´´
+```
 alex@/tmp/binary_trees$ cat 0-main.c
 #include <stdlib.h>
 #include <stdio.h>
@@ -95,4 +95,4 @@ Is 98 avl: 0
                               (420)
 Is 98 avl: 0
 alex@/tmp/binary_trees$
-´´´
+```

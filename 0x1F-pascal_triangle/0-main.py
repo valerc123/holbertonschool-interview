@@ -1,28 +1,17 @@
 #!/usr/bin/python3
+
 """
-returns a list of lists of integers representing the Pascal’s triangle
+0-main
 """
+pascal_triangle = __import__('0-pascal_triangle').pascal_triangle
 
-
-def pascal_triangle(n):
+def print_triangle(triangle):
     """
-     Pascal's Triangle
+    Print the triangle
     """
-    if n <= 0:
-        return ([])
+    for row in triangle:
+        print("[{}]".format(",".join([str(x) for x in row])))
 
-    triangle = []
-    index = 1
-    while index < n + 1:
-        j = index
-        c = 0
-        n_level = [1]
-        while j > 2:
-            n_level.append(triangle[-1][c] + triangle[-1][c + 1])
-            j -= 1
-            c += 1
-        if index > 1:
-            n_level.append(1)
-        triangle.append(n_level)
-        index += 1
-    return (triangle)
+
+if __name__ == "__main__":
+    print_triangle(pascal_triangle(5))

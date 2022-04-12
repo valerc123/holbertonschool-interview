@@ -83,6 +83,7 @@ void build_tree(Tree *root, char const **words, int nb_words, Tree **nodes)
 *
 * Return: array of indices
 */
+
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
 	int i = 0, j, k, slen, matches;
